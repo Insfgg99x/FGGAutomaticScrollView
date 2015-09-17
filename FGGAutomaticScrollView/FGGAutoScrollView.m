@@ -64,6 +64,7 @@
 {
     _scroll=[[UIScrollView alloc]initWithFrame:self.bounds];
     [self addSubview:_scroll];
+    _scroll.delegate=self;
     _scroll.contentSize=CGSizeMake((_URLArray.count+1)*self.bounds.size.width, self.bounds.size.height);
     _scroll.pagingEnabled=YES;
     _scroll.showsHorizontalScrollIndicator=NO;
@@ -132,6 +133,15 @@
            weakSelf.scroll.contentOffset=CGPointMake(index*self.bounds.size.width, 0);
         }];
     }
+}
+#pragma mark - UIScrollView
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSInteger index=_scroll.contentOffset.x/self.bounds.size.width;
+    if(index==_URLArray.count)
+        index=0;
+    _pageControl.currentPage=index;
+    _scroll.contentOffset=CGPointMake(self.bounds.size.width*index, 0);
 }
 //点击图片时回调代码块
 -(void)tapImage

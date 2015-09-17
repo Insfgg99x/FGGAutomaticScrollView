@@ -32,7 +32,7 @@ typedef void (^FGGImageClickBlock) (NSInteger selectedIndex);
 /**
  *  自动循环滚动的滚动视图
  */
-@interface FGGAutoScrollView : UIView
+@interface FGGAutoScrollView : UIView<UIScrollViewDelegate>
 
 /**
  *  滚动视图对象（只读）
