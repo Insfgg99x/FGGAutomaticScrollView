@@ -32,6 +32,7 @@
                 break;
                 case 2:
                 NSLog(@"你选择了第%ld张图片",selectedIndex);
+                break;
             default:
                 break;
         }
