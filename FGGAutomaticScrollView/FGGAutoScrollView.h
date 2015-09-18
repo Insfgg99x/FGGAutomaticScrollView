@@ -41,7 +41,7 @@ typedef void (^FGGImageClickBlock) (NSInteger selectedIndex);
 @property(nonatomic,copy,readonly)FGGImageClickBlock didSelectedImageAtIndex;
 
 /**
- *  初始化方法：对象方法
+ *  加载网络图片滚动
  *
  *  @param frame    frame
  *  @param URLArray 包含图片URL字符串的数组
@@ -52,7 +52,7 @@ typedef void (^FGGImageClickBlock) (NSInteger selectedIndex);
 -(instancetype)initWithFrame:(CGRect)frame imageURLs:(NSArray *)URLArray imageDidSelectedBlock:(FGGImageClickBlock) didSelectedImageAtIndex;
 
 /**
- *  初始化方法：直接加载本地图片滚动
+ *  加载本地图片滚动
  *
  *  @param frame      frame
  *  @param imageNames 本地图片名字数组

@@ -73,7 +73,9 @@
     {
         CGFloat xpos=i*self.bounds.size.width;
         UIImageView *imv=[[UIImageView alloc]initWithFrame:CGRectMake(xpos, 0, self.bounds.size.width, self.bounds.size.height)];
+        imv.backgroundColor=[UIColor lightGrayColor];
         imv.userInteractionEnabled=YES;
+        
         //添加点击图片的手势
         UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImage)];
         [imv addGestureRecognizer:tap];
@@ -89,6 +91,12 @@
         //读取不到，就下载
         if(!imv.image)
         {
+            //指示器
+            UIActivityIndicatorView *indicator=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+            indicator.center=CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+            [imv addSubview:indicator];
+            [indicator startAnimating];
+            
             //开辟线程，加载图片
             dispatch_queue_t queue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
             dispatch_async(queue, ^{
@@ -102,6 +110,7 @@
                     //返回主线程刷新UI
                     dispatch_async(dispatch_get_main_queue(), ^{
                         imv.image=[UIImage imageWithData:data];
+                        [indicator removeFromSuperview];
                     });
                 }
             });
@@ -111,8 +120,8 @@
     _pageControl.center=CGPointMake(self.bounds.size.width/2, self.bounds.size.height-10);
     _pageControl.numberOfPages=_URLArray.count;
     _pageControl.currentPage=0;
-    _pageControl.pageIndicatorTintColor=[UIColor lightGrayColor];
-    _pageControl.currentPageIndicatorTintColor=[UIColor orangeColor];
+    _pageControl.pageIndicatorTintColor=[UIColor darkGrayColor];
+    _pageControl.currentPageIndicatorTintColor=[UIColor colorWithRed:181/255.f green:0 blue:0 alpha:1];
     [self addSubview:_pageControl];
 }
 /**
@@ -129,7 +138,7 @@
         _pageControl.currentPage=index;
         __weak typeof(self) weakSelf=self;
         //添加滚动动画
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
            weakSelf.scroll.contentOffset=CGPointMake(index*self.bounds.size.width, 0);
         }];
     }

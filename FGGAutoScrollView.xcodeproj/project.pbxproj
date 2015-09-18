@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8B1DC231BAC0DBD002449AE /* FGGAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B1DC221BAC0DBD002449AE /* FGGAutoScrollView.m */; };
 		E8FA26B21BAA706100D2CD4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FA26B11BAA706100D2CD4A /* main.m */; };
 		E8FA26B51BAA706100D2CD4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FA26B41BAA706100D2CD4A /* AppDelegate.m */; };
 		E8FA26B81BAA706100D2CD4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FA26B71BAA706100D2CD4A /* ViewController.m */; };
@@ -14,7 +15,6 @@
 		E8FA26BD1BAA706100D2CD4A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8FA26BC1BAA706100D2CD4A /* Images.xcassets */; };
 		E8FA26C01BAA706100D2CD4A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8FA26BE1BAA706100D2CD4A /* LaunchScreen.xib */; };
 		E8FA26CC1BAA706100D2CD4A /* FGGAutoScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FA26CB1BAA706100D2CD4A /* FGGAutoScrollViewTests.m */; };
-		E8FDFA861BAABB9300C20E27 /* FGGAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FDFA851BAABB9300C20E27 /* FGGAutoScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E8B1DC211BAC0DBD002449AE /* FGGAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGGAutoScrollView.h; sourceTree = "<group>"; };
+		E8B1DC221BAC0DBD002449AE /* FGGAutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGGAutoScrollView.m; sourceTree = "<group>"; };
 		E8FA26AC1BAA706100D2CD4A /* FGGAutoScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGGAutoScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8FA26B01BAA706100D2CD4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8FA26B11BAA706100D2CD4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,8 +43,6 @@
 		E8FA26C51BAA706100D2CD4A /* FGGAutoScrollViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FGGAutoScrollViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8FA26CA1BAA706100D2CD4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8FA26CB1BAA706100D2CD4A /* FGGAutoScrollViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGGAutoScrollViewTests.m; sourceTree = "<group>"; };
-		E8FDFA841BAABB9300C20E27 /* FGGAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGGAutoScrollView.h; sourceTree = "<group>"; };
-		E8FDFA851BAABB9300C20E27 /* FGGAutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGGAutoScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +63,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E8B1DC201BAC0DBD002449AE /* FGGAutomaticScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E8B1DC211BAC0DBD002449AE /* FGGAutoScrollView.h */,
+				E8B1DC221BAC0DBD002449AE /* FGGAutoScrollView.m */,
+			);
+			path = FGGAutomaticScrollView;
+			sourceTree = "<group>";
+		};
 		E8FA26A31BAA706100D2CD4A = {
 			isa = PBXGroup;
 			children = (
-				E8FDFA831BAABB9300C20E27 /* FGGAutomaticScrollView */,
+				E8B1DC201BAC0DBD002449AE /* FGGAutomaticScrollView */,
 				E8FA26AE1BAA706100D2CD4A /* FGGAutoScrollView */,
 				E8FA26C81BAA706100D2CD4A /* FGGAutoScrollViewTests */,
 				E8FA26AD1BAA706100D2CD4A /* Products */,
@@ -121,15 +130,6 @@
 				E8FA26CA1BAA706100D2CD4A /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E8FDFA831BAABB9300C20E27 /* FGGAutomaticScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				E8FDFA841BAABB9300C20E27 /* FGGAutoScrollView.h */,
-				E8FDFA851BAABB9300C20E27 /* FGGAutoScrollView.m */,
-			);
-			path = FGGAutomaticScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8FA26B81BAA706100D2CD4A /* ViewController.m in Sources */,
-				E8FDFA861BAABB9300C20E27 /* FGGAutoScrollView.m in Sources */,
+				E8B1DC231BAC0DBD002449AE /* FGGAutoScrollView.m in Sources */,
 				E8FA26B51BAA706100D2CD4A /* AppDelegate.m in Sources */,
 				E8FA26B21BAA706100D2CD4A /* main.m in Sources */,
 			);
