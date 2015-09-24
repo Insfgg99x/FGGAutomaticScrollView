@@ -1,5 +1,5 @@
 FGGAutomaticScrollView简介：<br>
-![演示](https://github.com/Insfgg99x/FGGDownAutomaticScrollView/blob/master/demo.gif)<br>
+![演示](https://github.com/Insfgg99x/FGGAutomaticScrollView/blob/master/demo.gif)<br>
 <br>
 -----------------------------------------------------------------------------------------<br>
 初始化方法：<br>
