@@ -66,6 +66,7 @@
     [self addSubview:_scroll];
     _scroll.delegate=self;
     _scroll.contentSize=CGSizeMake((_URLArray.count+1)*self.bounds.size.width, self.bounds.size.height);
+    
     _scroll.pagingEnabled=YES;
     _scroll.showsHorizontalScrollIndicator=NO;
     _timer=[NSTimer scheduledTimerWithTimeInterval:kFGGScrollInterval target:self selector:@selector(automaticScroll) userInfo:nil repeats:YES];
