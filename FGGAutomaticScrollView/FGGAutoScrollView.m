@@ -49,7 +49,7 @@
                     path=[[NSBundle mainBundle] pathForResource:name ofType:nil];
                 else
                     path=[[NSBundle mainBundle] pathForResource:name ofType:@"png"];
-                NSString *fullPath=[NSString stringWithFormat:@"file://%@",path];
+                NSString *fullPath=[NSString stringWithFormat:@"file://%@",[path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
                 [fullPathArray addObject:fullPath];
             }
             _URLArray=fullPathArray;
@@ -74,6 +74,7 @@
     {
         CGFloat xpos=i*self.bounds.size.width;
         UIImageView *imv=[[UIImageView alloc]initWithFrame:CGRectMake(xpos, 0, self.bounds.size.width, self.bounds.size.height)];
+        //设置灰色底
         imv.backgroundColor=[UIColor lightGrayColor];
         imv.userInteractionEnabled=YES;
         
