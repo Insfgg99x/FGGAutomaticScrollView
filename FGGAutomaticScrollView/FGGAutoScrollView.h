@@ -37,8 +37,13 @@ typedef void (^FGGImageClickBlock) (NSInteger selectedIndex);
 /**
  *  滚动视图对象（只读）
  */
-@property(nonatomic,strong,readonly)UIScrollView *scroll;
-@property(nonatomic,copy,readonly)FGGImageClickBlock didSelectedImageAtIndex;
+@property(nonatomic,strong,readonly)UIScrollView        *scroll;
+/**点击照片的回调*/
+@property(nonatomic,copy,readonly)FGGImageClickBlock    didSelectedImageAtIndex;
+/**滚动时的回调*/
+@property(nonatomic,copy) void                          (^imageDidScrolledBlock)(NSInteger index);
+/**图片的urlString链接数组*/
+@property(nonatomic,strong)NSArray                      *imageURLArray;
 
 /**
  *  加载网络图片滚动
@@ -49,7 +54,7 @@ typedef void (^FGGImageClickBlock) (NSInteger selectedIndex);
  *
  *  @return FGGAutoScrollView对象
  */
--(instancetype)initWithFrame:(CGRect)frame imageURLs:(NSArray *)URLArray imageDidSelectedBlock:(FGGImageClickBlock) didSelectedImageAtIndex;
+-(instancetype)initWithFrame:(CGRect)frame placeHolderImage:(UIImage *)placeHolderImage imageURLs:(NSArray *)URLArray imageDidSelectedBlock:(FGGImageClickBlock) didSelectedImageAtIndex;
 
 /**
  *  加载本地图片滚动
@@ -60,6 +65,6 @@ typedef void (^FGGImageClickBlock) (NSInteger selectedIndex);
  *
  *  @return FGGAutoScrollView对象
  */
--(instancetype)initWithFrame:(CGRect)frame localImageNames:(NSArray *)imageNames imageDidSelectedBlock:(FGGImageClickBlock) didSelectedImageAtIndex;
+-(instancetype)initWithFrame:(CGRect)frame placeHolderImage:(UIImage *)placeHolderImage localImageNames:(NSArray *)imageNames imageDidSelectedBlock:(FGGImageClickBlock) didSelectedImageAtIndex;
 
 @end
