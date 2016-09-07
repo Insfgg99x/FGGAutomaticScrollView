@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 夏桂峰. All rights reserved.
 /*
  FGGAutomaticScrollView简介：
- -----------------------------------------------------------------------------------------------------
+ -----------------------------------------------------------------------
  初始化方法：
  分为两种：
  1.从网络加载图片：[[FGGAutoScrollView alloc] initWithFrame:(CGRect)frame
@@ -18,7 +18,7 @@
                                    imageDidSelectedBlock:(FGGImageClickBlock) didSelectedImageAtIndex;
  提示：
  若不需要为图片添加点击事件，初始化时，点击图片的回调block置为nil就可以了。
- -----------------------------------------------------------------------------------------------------
+ ----------------------------------------------------------------------
    Copyright (c) 2015年 xia. All rights reserved.
  */
 #import <UIKit/UIKit.h>
@@ -28,7 +28,8 @@
  */
 static double kFGGScrollInterval = 3.0f;
 
-typedef void (^FGGImageClickBlock) (NSInteger selectedIndex);
+typedef void(^FGGImageClickBlock)(NSInteger selectedIndex);
+typedef void(^FGGScrollCallBack)(NSInteger currentIndex);
 /**
  *  自动循环滚动的滚动视图
  */
@@ -41,7 +42,7 @@ typedef void (^FGGImageClickBlock) (NSInteger selectedIndex);
 /**点击照片的回调*/
 @property(nonatomic,copy,readonly)FGGImageClickBlock    didSelectedImageAtIndex;
 /**滚动时的回调*/
-@property(nonatomic,copy) void                          (^imageDidScrolledBlock)(NSInteger index);
+@property(nonatomic,copy)FGGScrollCallBack              imageDidScrolledBlock;
 /**图片的urlString链接数组*/
 @property(nonatomic,strong)NSArray                      *imageURLArray;
 
