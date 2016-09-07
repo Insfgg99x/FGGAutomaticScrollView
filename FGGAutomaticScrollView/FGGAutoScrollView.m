@@ -20,17 +20,15 @@
 }
 
 //加载网络图片的方法
--(instancetype)initWithFrame:(CGRect)frame placeHolderImage:(UIImage *)placeHolderImage imageURLs:(NSArray *)URLArray imageDidSelectedBlock:(FGGImageClickBlock)didSelectedImageAtIndex
-{
-    if(self=[super initWithFrame:frame])
-    {
-        if(URLArray.count>0)
-        {
-            _placeHolderImage=placeHolderImage;
-            _imageURLArray=URLArray;
-            _didSelectedImageAtIndex=didSelectedImageAtIndex;
-            [self createScrollView];
-        }
+-(instancetype)initWithFrame:(CGRect)frame placeHolderImage:(UIImage *)placeHolderImage imageURLs:(NSArray *)URLArray imageDidSelectedBlock:(FGGImageClickBlock)didSelectedImageAtIndex{
+    
+    if(self=[super initWithFrame:frame]){
+        
+        _placeHolderImage=placeHolderImage;
+        _imageURLArray=URLArray;
+        _didSelectedImageAtIndex=didSelectedImageAtIndex;
+        [self createScrollView];
+      
     }
     return self;
 }
