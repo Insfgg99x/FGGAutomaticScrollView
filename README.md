@@ -10,7 +10,7 @@ Download This Project and drag the FGGAutomaticScrollView folder into your peroj
 
 Cocoapods:
 ```
-pod 'FGGAutoScrollView', '~> 1.0.0'
+pod 'FGGAutoScrollView', '~> 1.0.1'
 ```
 
 ###Usage
